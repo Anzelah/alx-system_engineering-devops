@@ -1,1 +1,1 @@
-set different permissions
+change mode of file
