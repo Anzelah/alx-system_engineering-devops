@@ -1,1 +1,1 @@
-add execute permission to the file's owner
+add execute to owner and group owner, read for rest
