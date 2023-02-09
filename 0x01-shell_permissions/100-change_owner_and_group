@@ -1,2 +1,2 @@
 #!/bin/bash
-su chown vincent:staff */
+su - vincent:staff chown vincent:staff */
