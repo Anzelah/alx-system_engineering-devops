@@ -1,1 +1,1 @@
-create an empty file
+add execute permission to the file's owner
