@@ -1,1 +1,1 @@
-change owner and group from symbolic link
+change file only owned by guillaume
