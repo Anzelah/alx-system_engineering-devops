@@ -1,1 +1,1 @@
-show patterns
+display line number with pattern
