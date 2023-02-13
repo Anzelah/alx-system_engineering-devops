@@ -1,0 +1,2 @@
+#!/bin/bash
+ifconfig | grep -A 3 "root" /etc/passwd

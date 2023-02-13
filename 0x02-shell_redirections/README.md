@@ -1,1 +1,1 @@
-display line number with pattern
+display specific lines after pattern
