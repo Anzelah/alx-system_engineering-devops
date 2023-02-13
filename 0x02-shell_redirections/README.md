@@ -1,1 +1,1 @@
-display last lines of text
+show first lines
