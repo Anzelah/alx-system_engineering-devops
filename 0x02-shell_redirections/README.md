@@ -1,1 +1,1 @@
-display specific lines after pattern
+lines without pattern
