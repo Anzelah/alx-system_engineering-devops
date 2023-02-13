@@ -1,1 +1,1 @@
-redirection
+duplicate lines
