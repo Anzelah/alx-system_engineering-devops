@@ -1,1 +1,1 @@
-lines without pattern
+starting with specific letter
