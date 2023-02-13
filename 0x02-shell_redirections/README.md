@@ -1,1 +1,1 @@
-Display confused smiley
+display comfused smiley
