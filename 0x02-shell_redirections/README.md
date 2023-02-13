@@ -1,1 +1,1 @@
-duplicate lines
+duplicate line
