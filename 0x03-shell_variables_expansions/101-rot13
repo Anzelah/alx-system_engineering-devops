@@ -1,2 +1,2 @@
 #!/bin/bash
-base64 -decode | rot13
+echo text | tr 'A-Za-z' 'N-ZA-Mn-za-m'
