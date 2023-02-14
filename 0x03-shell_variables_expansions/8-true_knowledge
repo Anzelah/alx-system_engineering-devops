@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((128+(name="TRUEKNNOWLEDGE")))
+echo $((128+(let num=TRUEKNNOWLEDGE")))
