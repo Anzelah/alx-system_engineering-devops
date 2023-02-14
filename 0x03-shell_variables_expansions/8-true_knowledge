@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $((128+(printf="TRUEKNNOWLEDGE")))
+echo $((128+("TRUEKNNOWLEDGE")))
