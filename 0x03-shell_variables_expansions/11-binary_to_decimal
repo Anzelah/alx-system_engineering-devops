@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(([base10]2))
