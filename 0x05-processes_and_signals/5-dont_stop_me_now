@@ -2,7 +2,7 @@
 # This script displays To infinity and beyond indefinitely, unless killed.
 # In between each iteration of the loop, add a sleep 2.
 i=1
-while [ ! "$kill -9" ]
+while [ ! "$kill SIGINT (2)" ]
 do
         echo "To infinity and beyond"
         sleep 2
