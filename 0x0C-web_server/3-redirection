@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Install nginx web server
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+new="localhost;\n\tlocation\ /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;}"
+sed -i "s/localhost;/$new/"
+sudo service nginx restart 
