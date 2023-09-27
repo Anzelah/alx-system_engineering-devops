@@ -1,19 +1,22 @@
 # Edit your configuration file to do as task 3 above, but this time using puppet
 
-package { 'nginx':
-  ensure => 'installed',
+package {'nginx':
+  ensure   => present,
+  provider => 'apt',
 }
 
-file {'/var/www/html/index.html':
-  ensure  => file,
-  path    => '/var/www/html/index.html'
-  content => 'Hello World!'
-  require => File['/var/www/html/index.html']
+exec { 'installation':
+  command => 'sudo apt-get -y update; sudo apt-get install nginx',
 }
 
-file { 'redirect_me':
-  ensure  => file,
-  path    => '/etc/nginx/sites-available/default'
-  content => '30i location/redirect_me / {return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4:}'
-  require => File['/etc/nginx/sites-available/default']
+exec { 'hello':
+  command => 'echo "Hello World!" > /var/www/html/index.html'
+}
+
+exec { 'redirect_page':
+  command => 'sudo sed -i "listen 80 default_server;\\n\t30i location/redirect_me / {\\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;} "/etc/nginx/sites-available/default'
+}
+
+exec { 'start_server':
+  command => 'sudo service nginx start'
 }
