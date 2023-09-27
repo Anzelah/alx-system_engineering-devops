@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # Install nginx web server
 
-
 sudo apt-get -y update
 sudo apt-get -y install nginx
-touch /var/www/html/404.html
-sudo echo "Ceci n'est pas une page" > /var/www/html/404.html
-sudo sed -i '/error_page 404/error_page 404/' /etc/nginx/sites-available/default
+sudo service nginx start
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+
+patn="\\\n\terror_page 404 /custom_404.html;"
+loc="{\n\t\troot /var/www/html;\n\t\tinternal;\n\t}"
+
+sudo sed -i "51i $patn\\n\tlocation = \/custom_404.html $loc" /etc/nginx/sites-available/default
 sudo service nginx restart
