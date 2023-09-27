@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Start apache so age can return required word
+# Encountered similar problem in web server project because i hadn't run script in server
+
+sudo service apache2 start
