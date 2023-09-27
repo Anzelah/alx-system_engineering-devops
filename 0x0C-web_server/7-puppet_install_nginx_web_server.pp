@@ -15,5 +15,5 @@ exec { 'redirect_page':
 }
 
 exec { 'start_server':
-  command => '/usr/bin/sudo /usr/bin/service nginx start'
+  command => '/usr/bin/sudo /usr/sbin/service nginx start'
 }
