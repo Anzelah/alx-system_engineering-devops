@@ -11,7 +11,7 @@ package {'nginx':
 file_line { 'Custom http header':
   path    => '/etc/nginx/sites-available/default',
   match   => 'server {,',
-  line    => "server {\n\tadd_header X-Served-By $hostname;}",
+  line    => "server {\n\tadd_header X-Served-By \"${hostname}\";}",
 }
 
 exec { 'restart':
