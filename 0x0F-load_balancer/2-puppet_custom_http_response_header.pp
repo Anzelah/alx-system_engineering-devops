@@ -1,7 +1,7 @@
 # Edit your configuration file to do as task 2 above, but this time using puppet
 
 include stdlib
-file_line { 'Custom http header':
+file_line { 'Custom header':
   path    => '/etc/haproxy/haproxy.cfg',
   line    => 'frontend http
         bind *:80
