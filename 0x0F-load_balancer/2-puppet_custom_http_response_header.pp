@@ -1,16 +1,19 @@
 # Edit your configuration file to do as task 2 above, but this time using puppet
 
-include stdlib
-file_line { 'Custom header':
-  path    => '/etc/haproxy/haproxy.cfg',
-  line    => 'frontend http
-        bind *:80
-        mode http
-        default_backend web-backend
+exec { 'uppdate':
+  command => '/usr/bin/apt-get update'
+}
 
-	backend web-backend
-        balance roundrobin
-        server web-01 54.210.88.27:80 check
-        server web-02 52.91.117.155:80 check',
+package {'nginx':
+  ensure => present,
+}
+
+file_line { 'Custom header':
+  path    => '/etc/nginx/sites-available/default'
+  line    => '\\\tadd_header X-Served-By $HOSTNAME;'
   replace => true
+}
+
+exec { 'restart':
+  command => '/usr/bin/service nginx restart'
 }
