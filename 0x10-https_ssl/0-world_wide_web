@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Display information about the newly created subdomains
+
+display_subdomains () {
+	if [ $# -eq 1 ]
+	then
+  	  dig www."$1" | grep -e ^www | awk '{print "The subdomain www is a "$4" record and points to "$5}'
+       	  dig lb-01."$1" | grep -e ^lb-01 | awk '{print "The subdomain lb-01 is a "$4" record and points to "$5}'
+	  dig web-01."$1" | grep -e ^web-01 | awk '{print "The subdomain web-01 is a "$4" record and points to "$5}'
+	  dig web-02."$1" | grep -e ^web-02 | awk '{print "The subdomain web-02 is a "$4" record and points to "$5}'
+	elif [ $# -eq 2 ]
+	then
+	  dig "$2"."$1" | grep -e ^$2 | awk '{print "The subdomain '$2' is a "$4" record and points to "$5}'
+	fi
+}
+
+display_subdomains $1 $2

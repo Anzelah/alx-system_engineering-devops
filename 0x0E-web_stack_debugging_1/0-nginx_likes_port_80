@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# fix a "failed to connect to 0 port 80: Connection refused" error
-
-sudo apt-get update
-sudo apt-get -y install nginx
-sudo sed -i "24i \\\tlisten 80;\n\tlisten [::]:80;\n\t" /etc/nginx/sites-available/default
-sudo service nginx restart start 
