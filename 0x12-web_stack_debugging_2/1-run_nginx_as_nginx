@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#Run nginx as nginx
+sudo sed -i "2iuser nginx;\n"  /etc/nginx/nginx.conf
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
