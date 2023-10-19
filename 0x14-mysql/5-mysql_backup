@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # creating a backup
-sudo mysqldump -u root tyrell_corp > backup.sql
-year = datetime.datetime.now().year
-month = datetime.datetime.now().month
-day = datetime.datetime.now().day
-timestamp = ("{}-{}-{}" .format(day, month, year))
-sudo tar -cvzf ~/{}.tar.gz ~/backup.sql format(timestamp)
+
+timestamp=$(date +"%d-%m-%Y")
+
+sudo mysqldump -u root tyrell_corp > backup.sq
+sudo tar -cvzf ~/"$timestamp".tar.gz ~/backup.sql
