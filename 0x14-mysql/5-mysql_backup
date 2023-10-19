@@ -3,5 +3,5 @@
 
 timestamp=$(date +"%d-%m-%Y")
 
-sudo mysqldump -u root tyrell_corp > backup.sq
+sudo mysqldump -u root tyrell_corp > backup.sql
 sudo tar -cvzf ~/"$timestamp".tar.gz ~/backup.sql
