@@ -23,8 +23,9 @@ def tabulate_tasks(eid):
         t_dict = {}
         t_dict["task"] = t.get("title")
         t_dict["completed"] = t.get("completed")
-        t_dict["username"] = t.get("username")
+        t_dict["username"] = name
         all_tasks.append(t_dict)
+
     data = {"{}" .format(eid): all_tasks}
 
     with open(filename, mode='w') as f:
