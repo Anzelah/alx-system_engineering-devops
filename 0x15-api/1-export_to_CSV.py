@@ -11,14 +11,14 @@ def tabulate_tasks(eid):
     url = f"https://jsonplaceholder.typicode.com/users/{eid}"
     res = requests.get(url)
     users = res.json()
-    name = users.get("name")  # find employee name
+    name = users.get("username")  # find employee name
 
     url = f"https://jsonplaceholder.typicode.com/users/{eid}/todos"
     res = requests.get(url)
     tasks = res.json()
 
     filename = ("{}.csv" .format(eid))
-    with open(filename, mode='a') as f:
+    with open(filename, mode='w') as f:
         for t in tasks:
             completed = t.get("completed")
             titles = t.get("title")
