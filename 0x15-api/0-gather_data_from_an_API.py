@@ -28,7 +28,7 @@ def tabulate_tasks(eid):
 
     print("Employee {} is done with tasks ({}/{}):"
           .format(name, completed, num_tasks))
-    print("{}" .format(titles.strip()))
+    print(titles.strip())
 
 
 if __name__ == "__main__":
