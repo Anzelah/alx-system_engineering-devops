@@ -26,9 +26,9 @@ def tabulate_tasks(eid):
             titles += "\t " + t.get("title") + "\n"
             # titles of the completed tasks
 
-    print("Employee {} is done with tasks ({}/{}):"
+    print("Employee {} is done with tasks({}/{}):"
           .format(name, completed, num_tasks))
-    print(titles.strip())
+    print("{}" .format(titles.strip()))
 
 
 if __name__ == "__main__":
